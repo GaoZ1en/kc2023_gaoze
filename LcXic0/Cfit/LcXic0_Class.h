@@ -1,12 +1,12 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Mon Feb 19 19:13:41 2024 by ROOT version 6.30/02
+// Tue Feb 27 18:51:23 2024 by ROOT version 6.30/02
 // from TTree DecayTree/DecayTree
 // found on file: XiccTuple.root
 //////////////////////////////////////////////////////////
 
-#ifndef LcXic_Class_h
-#define LcXic_Class_h
+#ifndef LcXic0_Class_h
+#define LcXic0_Class_h
 
 #include <TROOT.h>
 #include <TChain.h>
@@ -14,7 +14,7 @@
 
 // Header file for the classes stored in the TTree if any.
 
-class LcXic_Class {
+class LcXic0_Class {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
    Int_t           fCurrent; //!current Tree number in a TChain
@@ -105,14 +105,14 @@ public :
    Float_t         C_FullFit_PV_Y[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_PV_Z[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_PV_key[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_M[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_MERR[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_P[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_PERR[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_ctau[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_ctauErr[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_decayLength[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_decayLengthErr[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_M[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_MERR[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_P[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_PERR[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_ctau[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_ctauErr[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_decayLength[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Xi_c0_decayLengthErr[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_chi2[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_ctau[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_ctauErr[100];   //[C_FullFit_nPV]
@@ -147,14 +147,14 @@ public :
    Float_t         C_PVFit_PV_Y[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_PV_Z[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_PV_key[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_M[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_MERR[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_P[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_PERR[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_ctau[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_ctauErr[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_decayLength[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_decayLengthErr[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_M[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_MERR[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_P[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_PERR[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_ctau[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_ctauErr[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_decayLength[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Xi_c0_decayLengthErr[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_chi2[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_ctau[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_ctauErr[100];   //[C_PVFit_nPV]
@@ -498,14 +498,14 @@ public :
    TBranch        *b_C_FullFit_PV_Y;   //!
    TBranch        *b_C_FullFit_PV_Z;   //!
    TBranch        *b_C_FullFit_PV_key;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_M;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_MERR;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_P;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_PERR;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_ctau;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_ctauErr;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_decayLength;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_decayLengthErr;   //!
+   TBranch        *b_C_FullFit_Xi_c0_M;   //!
+   TBranch        *b_C_FullFit_Xi_c0_MERR;   //!
+   TBranch        *b_C_FullFit_Xi_c0_P;   //!
+   TBranch        *b_C_FullFit_Xi_c0_PERR;   //!
+   TBranch        *b_C_FullFit_Xi_c0_ctau;   //!
+   TBranch        *b_C_FullFit_Xi_c0_ctauErr;   //!
+   TBranch        *b_C_FullFit_Xi_c0_decayLength;   //!
+   TBranch        *b_C_FullFit_Xi_c0_decayLengthErr;   //!
    TBranch        *b_C_FullFit_chi2;   //!
    TBranch        *b_C_FullFit_ctau;   //!
    TBranch        *b_C_FullFit_ctauErr;   //!
@@ -540,14 +540,14 @@ public :
    TBranch        *b_C_PVFit_PV_Y;   //!
    TBranch        *b_C_PVFit_PV_Z;   //!
    TBranch        *b_C_PVFit_PV_key;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_M;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_MERR;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_P;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_PERR;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_ctau;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_ctauErr;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_decayLength;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_decayLengthErr;   //!
+   TBranch        *b_C_PVFit_Xi_c0_M;   //!
+   TBranch        *b_C_PVFit_Xi_c0_MERR;   //!
+   TBranch        *b_C_PVFit_Xi_c0_P;   //!
+   TBranch        *b_C_PVFit_Xi_c0_PERR;   //!
+   TBranch        *b_C_PVFit_Xi_c0_ctau;   //!
+   TBranch        *b_C_PVFit_Xi_c0_ctauErr;   //!
+   TBranch        *b_C_PVFit_Xi_c0_decayLength;   //!
+   TBranch        *b_C_PVFit_Xi_c0_decayLengthErr;   //!
    TBranch        *b_C_PVFit_chi2;   //!
    TBranch        *b_C_PVFit_ctau;   //!
    TBranch        *b_C_PVFit_ctauErr;   //!
@@ -815,8 +815,8 @@ public :
    TBranch        *b_nMuonCoordsS4;   //!
    TBranch        *b_nMuonTracks;   //!
 
-   LcXic_Class(TTree *tree=0);
-   virtual ~LcXic_Class();
+   LcXic0_Class(TTree *tree=0);
+   virtual ~LcXic0_Class();
    virtual Int_t    Cut(Long64_t entry);
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
@@ -827,8 +827,8 @@ public :
 
 #endif
 
-#ifdef LcXic_Class_cxx
-LcXic_Class::LcXic_Class(TTree *tree) : fChain(0) 
+#ifdef LcXic0_Class_cxx
+LcXic0_Class::LcXic0_Class(TTree *tree) : fChain(0) 
 {
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
@@ -843,19 +843,19 @@ LcXic_Class::LcXic_Class(TTree *tree) : fChain(0)
    Init(tree);
 }
 
-LcXic_Class::~LcXic_Class()
+LcXic0_Class::~LcXic0_Class()
 {
    if (!fChain) return;
    delete fChain->GetCurrentFile();
 }
 
-Int_t LcXic_Class::GetEntry(Long64_t entry)
+Int_t LcXic0_Class::GetEntry(Long64_t entry)
 {
 // Read contents of entry.
    if (!fChain) return 0;
    return fChain->GetEntry(entry);
 }
-Long64_t LcXic_Class::LoadTree(Long64_t entry)
+Long64_t LcXic0_Class::LoadTree(Long64_t entry)
 {
 // Set the environment to read one entry
    if (!fChain) return -5;
@@ -868,7 +868,7 @@ Long64_t LcXic_Class::LoadTree(Long64_t entry)
    return centry;
 }
 
-void LcXic_Class::Init(TTree *tree)
+void LcXic0_Class::Init(TTree *tree)
 {
    // The Init() function is called when the selector needs to initialize
    // a new tree or chain. Typically here the branch addresses and branch
@@ -959,14 +959,14 @@ void LcXic_Class::Init(TTree *tree)
    fChain->SetBranchAddress("C_FullFit_PV_Y", C_FullFit_PV_Y, &b_C_FullFit_PV_Y);
    fChain->SetBranchAddress("C_FullFit_PV_Z", C_FullFit_PV_Z, &b_C_FullFit_PV_Z);
    fChain->SetBranchAddress("C_FullFit_PV_key", C_FullFit_PV_key, &b_C_FullFit_PV_key);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_M", C_FullFit_Xi_cplus_M, &b_C_FullFit_Xi_cplus_M);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_MERR", C_FullFit_Xi_cplus_MERR, &b_C_FullFit_Xi_cplus_MERR);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_P", C_FullFit_Xi_cplus_P, &b_C_FullFit_Xi_cplus_P);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_PERR", C_FullFit_Xi_cplus_PERR, &b_C_FullFit_Xi_cplus_PERR);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_ctau", C_FullFit_Xi_cplus_ctau, &b_C_FullFit_Xi_cplus_ctau);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_ctauErr", C_FullFit_Xi_cplus_ctauErr, &b_C_FullFit_Xi_cplus_ctauErr);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_decayLength", C_FullFit_Xi_cplus_decayLength, &b_C_FullFit_Xi_cplus_decayLength);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_decayLengthErr", C_FullFit_Xi_cplus_decayLengthErr, &b_C_FullFit_Xi_cplus_decayLengthErr);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_M", C_FullFit_Xi_c0_M, &b_C_FullFit_Xi_c0_M);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_MERR", C_FullFit_Xi_c0_MERR, &b_C_FullFit_Xi_c0_MERR);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_P", C_FullFit_Xi_c0_P, &b_C_FullFit_Xi_c0_P);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_PERR", C_FullFit_Xi_c0_PERR, &b_C_FullFit_Xi_c0_PERR);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_ctau", C_FullFit_Xi_c0_ctau, &b_C_FullFit_Xi_c0_ctau);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_ctauErr", C_FullFit_Xi_c0_ctauErr, &b_C_FullFit_Xi_c0_ctauErr);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_decayLength", C_FullFit_Xi_c0_decayLength, &b_C_FullFit_Xi_c0_decayLength);
+   fChain->SetBranchAddress("C_FullFit_Xi_c0_decayLengthErr", C_FullFit_Xi_c0_decayLengthErr, &b_C_FullFit_Xi_c0_decayLengthErr);
    fChain->SetBranchAddress("C_FullFit_chi2", C_FullFit_chi2, &b_C_FullFit_chi2);
    fChain->SetBranchAddress("C_FullFit_ctau", C_FullFit_ctau, &b_C_FullFit_ctau);
    fChain->SetBranchAddress("C_FullFit_ctauErr", C_FullFit_ctauErr, &b_C_FullFit_ctauErr);
@@ -1001,14 +1001,14 @@ void LcXic_Class::Init(TTree *tree)
    fChain->SetBranchAddress("C_PVFit_PV_Y", C_PVFit_PV_Y, &b_C_PVFit_PV_Y);
    fChain->SetBranchAddress("C_PVFit_PV_Z", C_PVFit_PV_Z, &b_C_PVFit_PV_Z);
    fChain->SetBranchAddress("C_PVFit_PV_key", C_PVFit_PV_key, &b_C_PVFit_PV_key);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_M", C_PVFit_Xi_cplus_M, &b_C_PVFit_Xi_cplus_M);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_MERR", C_PVFit_Xi_cplus_MERR, &b_C_PVFit_Xi_cplus_MERR);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_P", C_PVFit_Xi_cplus_P, &b_C_PVFit_Xi_cplus_P);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_PERR", C_PVFit_Xi_cplus_PERR, &b_C_PVFit_Xi_cplus_PERR);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_ctau", C_PVFit_Xi_cplus_ctau, &b_C_PVFit_Xi_cplus_ctau);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_ctauErr", C_PVFit_Xi_cplus_ctauErr, &b_C_PVFit_Xi_cplus_ctauErr);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_decayLength", C_PVFit_Xi_cplus_decayLength, &b_C_PVFit_Xi_cplus_decayLength);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_decayLengthErr", C_PVFit_Xi_cplus_decayLengthErr, &b_C_PVFit_Xi_cplus_decayLengthErr);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_M", C_PVFit_Xi_c0_M, &b_C_PVFit_Xi_c0_M);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_MERR", C_PVFit_Xi_c0_MERR, &b_C_PVFit_Xi_c0_MERR);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_P", C_PVFit_Xi_c0_P, &b_C_PVFit_Xi_c0_P);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_PERR", C_PVFit_Xi_c0_PERR, &b_C_PVFit_Xi_c0_PERR);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_ctau", C_PVFit_Xi_c0_ctau, &b_C_PVFit_Xi_c0_ctau);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_ctauErr", C_PVFit_Xi_c0_ctauErr, &b_C_PVFit_Xi_c0_ctauErr);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_decayLength", C_PVFit_Xi_c0_decayLength, &b_C_PVFit_Xi_c0_decayLength);
+   fChain->SetBranchAddress("C_PVFit_Xi_c0_decayLengthErr", C_PVFit_Xi_c0_decayLengthErr, &b_C_PVFit_Xi_c0_decayLengthErr);
    fChain->SetBranchAddress("C_PVFit_chi2", C_PVFit_chi2, &b_C_PVFit_chi2);
    fChain->SetBranchAddress("C_PVFit_ctau", C_PVFit_ctau, &b_C_PVFit_ctau);
    fChain->SetBranchAddress("C_PVFit_ctauErr", C_PVFit_ctauErr, &b_C_PVFit_ctauErr);
@@ -1278,7 +1278,7 @@ void LcXic_Class::Init(TTree *tree)
    Notify();
 }
 
-Bool_t LcXic_Class::Notify()
+Bool_t LcXic0_Class::Notify()
 {
    // The Notify() function is called when a new file is opened. This
    // can be either for a new TTree in a TChain or when when a new TTree
@@ -1289,18 +1289,18 @@ Bool_t LcXic_Class::Notify()
    return kTRUE;
 }
 
-void LcXic_Class::Show(Long64_t entry)
+void LcXic0_Class::Show(Long64_t entry)
 {
 // Print contents of entry.
 // If entry is not specified, print current entry
    if (!fChain) return;
    fChain->Show(entry);
 }
-Int_t LcXic_Class::Cut(Long64_t entry)
+Int_t LcXic0_Class::Cut(Long64_t entry)
 {
 // This function may be called from Loop.
 // returns  1 if entry is accepted.
 // returns -1 otherwise.
    return 1;
 }
-#endif // #ifdef LcXic_Class_cxx
+#endif // #ifdef LcXic0_Class_cxx

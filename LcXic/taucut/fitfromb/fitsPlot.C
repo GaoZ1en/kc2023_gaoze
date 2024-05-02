@@ -26,13 +26,14 @@
 using namespace RooFit;
 using namespace RooStats;
 
-void fitLcXic()
+void fitsPlot()
 {
    gROOT->ProcessLine(".x /home/Koishi/LcXic/datafiles/lhcbStyle.C");
 
+   TCut tauCut("C_TAU*1000>=0.12");
    TChain* chain = new TChain();
    chain->Add("/home/Koishi/LcXic/datafiles/XiccTuple.root/DecayTree");
-   TTree* newtree = chain->CopyTree("");
+   TTree* newtree = chain->CopyTree(tauCut);
 
    RooArgSet vars("Variables");
    RooRealVar m_Lc("Lc_M","M(#Lambda_{c}^{+})",2210,2360,"MeV/c^{2}");
@@ -57,7 +58,7 @@ void fitLcXic()
    
    // #### sig_Lc ####
    RooRealVar mean_Lc("#mu_Lc","mean_Lc",2287,2220,2360);
-   RooRealVar sigma_Lc("#sigma_Lc","sigma_Lc",6,0.,20);
+   RooRealVar sigma_Lc("#sigma_Lc","sigma_Lc",6,1,20);
    RooRealVar alphal_Lc("al_Lc","alphal_Lc",1,0,5);
    RooRealVar alphar_Lc("ar_Lc","alphar_Lc",1,0,5);
    RooRealVar nl_Lc("nl_Lc","nl_Lc",10,0,20);
@@ -80,7 +81,7 @@ void fitLcXic()
 
    // #### sig_Xic ####
    RooRealVar mean_Xic("#mu_Xic","mean_Xic",2467,2420,2540);
-   RooRealVar sigma_Xic("#sigma_Xic","sigma_Xic",6,0.,20);
+   RooRealVar sigma_Xic("#sigma_Xic","sigma_Xic",6,1,20);
    RooRealVar alphal_Xic("al_Xic","alphal_Xic",1,0,5);
    RooRealVar alphar_Xic("ar_Xic","alphar_Xic",1,0,5);
    RooRealVar nl_Xic("nl_Xic","nl_Xic",10,0,20);

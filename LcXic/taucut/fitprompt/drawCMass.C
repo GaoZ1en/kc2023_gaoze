@@ -1,13 +1,18 @@
 void drawCMass()
 {
+  gROOT->ProcessLine(".x /home/Koishi/LcXic/datafiles/lhcbStyle.C");
 
   using namespace RooFit;
 
   TCanvas *MyCan = new TCanvas("MyCan", "",600, 480 );
 
-  TChain *chain = new TChain("DecayTree");
-  chain->Add("/home/Koishi/LcXic/datafiles/XiccTuple_sw.root");
+  TCut taucut("C_TAU*1000<0.12");
+
+  TChain *tree = new TChain("DecayTree");
+  tree->Add("/home/Koishi/LcXic/taucut/XiccTuple_sw.root");
+  TTree *chain = tree->CopyTree(taucut);
   
+
   //...mass range
   const Double_t MassMin = 4755;
   const Double_t MassMax = 6755;

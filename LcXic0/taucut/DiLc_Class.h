@@ -1,12 +1,12 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Mon Feb 19 19:13:41 2024 by ROOT version 6.30/02
+// Wed Dec 13 14:19:05 2023 by ROOT version 6.24/08
 // from TTree DecayTree/DecayTree
 // found on file: XiccTuple.root
 //////////////////////////////////////////////////////////
 
-#ifndef LcXic_Class_h
-#define LcXic_Class_h
+#ifndef DiLc_Class_h
+#define DiLc_Class_h
 
 #include <TROOT.h>
 #include <TChain.h>
@@ -14,7 +14,7 @@
 
 // Header file for the classes stored in the TTree if any.
 
-class LcXic_Class {
+class DiLc_Class {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
    Int_t           fCurrent; //!current Tree number in a TChain
@@ -25,9 +25,9 @@ public :
    static constexpr Int_t kMaxLc_ENDVERTEX_COV = 1;
    static constexpr Int_t kMaxLc_OWNPV_COV = 1;
    static constexpr Int_t kMaxLc_ORIVX_COV = 1;
-   static constexpr Int_t kMaxXic_ENDVERTEX_COV = 1;
-   static constexpr Int_t kMaxXic_OWNPV_COV = 1;
-   static constexpr Int_t kMaxXic_ORIVX_COV = 1;
+   static constexpr Int_t kMaxLcBar_ENDVERTEX_COV = 1;
+   static constexpr Int_t kMaxLcBar_OWNPV_COV = 1;
+   static constexpr Int_t kMaxLcBar_ORIVX_COV = 1;
 
    // Declaration of leaf types
    Double_t        C_ETA;
@@ -85,10 +85,19 @@ public :
    Double_t        C_Lc_DTF_CTAU;
    Double_t        C_Lc_DTF_CTAUERR;
    Double_t        C_Lc_DTF_CTAUS;
-   Double_t        C_Xic_DTF_CTAU;
-   Double_t        C_Xic_DTF_CTAUERR;
-   Double_t        C_Xic_DTF_CTAUS;
+   Double_t        C_SumXicIPCHI2;
+   Double_t        C_SumXicPT;
+   Double_t        C_SumXiccIPCHI2;
+   Double_t        C_SumXiccPT;
    Int_t           C_FullFit_nPV;
+   Float_t         C_FullFit_Lambda_cplus_0_M[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Lambda_cplus_0_MERR[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Lambda_cplus_0_P[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Lambda_cplus_0_PERR[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Lambda_cplus_0_ctau[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Lambda_cplus_0_ctauErr[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Lambda_cplus_0_decayLength[100];   //[C_FullFit_nPV]
+   Float_t         C_FullFit_Lambda_cplus_0_decayLengthErr[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_Lambda_cplus_M[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_Lambda_cplus_MERR[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_Lambda_cplus_P[100];   //[C_FullFit_nPV]
@@ -105,14 +114,6 @@ public :
    Float_t         C_FullFit_PV_Y[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_PV_Z[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_PV_key[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_M[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_MERR[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_P[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_PERR[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_ctau[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_ctauErr[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_decayLength[100];   //[C_FullFit_nPV]
-   Float_t         C_FullFit_Xi_cplus_decayLengthErr[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_chi2[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_ctau[100];   //[C_FullFit_nPV]
    Float_t         C_FullFit_ctauErr[100];   //[C_FullFit_nPV]
@@ -131,6 +132,14 @@ public :
    Float_t         C_MassFit_nIter[100];   //[C_MassFit_nPV]
    Float_t         C_MassFit_status[100];   //[C_MassFit_nPV]
    Int_t           C_PVFit_nPV;
+   Float_t         C_PVFit_Lambda_cplus_0_M[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Lambda_cplus_0_MERR[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Lambda_cplus_0_P[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Lambda_cplus_0_PERR[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Lambda_cplus_0_ctau[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Lambda_cplus_0_ctauErr[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Lambda_cplus_0_decayLength[100];   //[C_PVFit_nPV]
+   Float_t         C_PVFit_Lambda_cplus_0_decayLengthErr[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_Lambda_cplus_M[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_Lambda_cplus_MERR[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_Lambda_cplus_P[100];   //[C_PVFit_nPV]
@@ -147,14 +156,6 @@ public :
    Float_t         C_PVFit_PV_Y[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_PV_Z[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_PV_key[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_M[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_MERR[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_P[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_PERR[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_ctau[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_ctauErr[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_decayLength[100];   //[C_PVFit_nPV]
-   Float_t         C_PVFit_Xi_cplus_decayLengthErr[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_chi2[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_ctau[100];   //[C_PVFit_nPV]
    Float_t         C_PVFit_ctauErr[100];   //[C_PVFit_nPV]
@@ -300,59 +301,59 @@ public :
    Bool_t          Lc_Hlt1TwoTrackMVADecision_Dec;
    Bool_t          Lc_Hlt1TwoTrackMVADecision_TIS;
    Bool_t          Lc_Hlt1TwoTrackMVADecision_TOS;
-   Double_t        Xic_ETA;
-   Double_t        Xic_LOKI_IPCHI2;
-   Double_t        Xic_Y;
-   Double_t        Xic_CosTheta;
-   Double_t        Xic_ENDVERTEX_X;
-   Double_t        Xic_ENDVERTEX_Y;
-   Double_t        Xic_ENDVERTEX_Z;
-   Double_t        Xic_ENDVERTEX_XERR;
-   Double_t        Xic_ENDVERTEX_YERR;
-   Double_t        Xic_ENDVERTEX_ZERR;
-   Double_t        Xic_ENDVERTEX_CHI2;
-   Int_t           Xic_ENDVERTEX_NDOF;
-   Float_t         Xic_ENDVERTEX_COV_[3][3];
-   Double_t        Xic_OWNPV_X;
-   Double_t        Xic_OWNPV_Y;
-   Double_t        Xic_OWNPV_Z;
-   Double_t        Xic_OWNPV_XERR;
-   Double_t        Xic_OWNPV_YERR;
-   Double_t        Xic_OWNPV_ZERR;
-   Double_t        Xic_OWNPV_CHI2;
-   Int_t           Xic_OWNPV_NDOF;
-   Float_t         Xic_OWNPV_COV_[3][3];
-   Double_t        Xic_IP_OWNPV;
-   Double_t        Xic_IPCHI2_OWNPV;
-   Double_t        Xic_FD_OWNPV;
-   Double_t        Xic_FDCHI2_OWNPV;
-   Double_t        Xic_DIRA_OWNPV;
-   Double_t        Xic_ORIVX_X;
-   Double_t        Xic_ORIVX_Y;
-   Double_t        Xic_ORIVX_Z;
-   Double_t        Xic_ORIVX_XERR;
-   Double_t        Xic_ORIVX_YERR;
-   Double_t        Xic_ORIVX_ZERR;
-   Double_t        Xic_ORIVX_CHI2;
-   Int_t           Xic_ORIVX_NDOF;
-   Float_t         Xic_ORIVX_COV_[3][3];
-   Double_t        Xic_FD_ORIVX;
-   Double_t        Xic_FDCHI2_ORIVX;
-   Double_t        Xic_DIRA_ORIVX;
-   Double_t        Xic_P;
-   Double_t        Xic_PT;
-   Double_t        Xic_PE;
-   Double_t        Xic_PX;
-   Double_t        Xic_PY;
-   Double_t        Xic_PZ;
-   Double_t        Xic_MM;
-   Double_t        Xic_MMERR;
-   Double_t        Xic_M;
-   Int_t           Xic_ID;
-   Double_t        Xic_TAU;
-   Double_t        Xic_TAUERR;
-   Double_t        Xic_TAUCHI2;
-   Double_t        Xic_TMVA_BDT;
+   Double_t        LcBar_ETA;
+   Double_t        LcBar_LOKI_IPCHI2;
+   Double_t        LcBar_Y;
+   Double_t        LcBar_CosTheta;
+   Double_t        LcBar_ENDVERTEX_X;
+   Double_t        LcBar_ENDVERTEX_Y;
+   Double_t        LcBar_ENDVERTEX_Z;
+   Double_t        LcBar_ENDVERTEX_XERR;
+   Double_t        LcBar_ENDVERTEX_YERR;
+   Double_t        LcBar_ENDVERTEX_ZERR;
+   Double_t        LcBar_ENDVERTEX_CHI2;
+   Int_t           LcBar_ENDVERTEX_NDOF;
+   Float_t         LcBar_ENDVERTEX_COV_[3][3];
+   Double_t        LcBar_OWNPV_X;
+   Double_t        LcBar_OWNPV_Y;
+   Double_t        LcBar_OWNPV_Z;
+   Double_t        LcBar_OWNPV_XERR;
+   Double_t        LcBar_OWNPV_YERR;
+   Double_t        LcBar_OWNPV_ZERR;
+   Double_t        LcBar_OWNPV_CHI2;
+   Int_t           LcBar_OWNPV_NDOF;
+   Float_t         LcBar_OWNPV_COV_[3][3];
+   Double_t        LcBar_IP_OWNPV;
+   Double_t        LcBar_IPCHI2_OWNPV;
+   Double_t        LcBar_FD_OWNPV;
+   Double_t        LcBar_FDCHI2_OWNPV;
+   Double_t        LcBar_DIRA_OWNPV;
+   Double_t        LcBar_ORIVX_X;
+   Double_t        LcBar_ORIVX_Y;
+   Double_t        LcBar_ORIVX_Z;
+   Double_t        LcBar_ORIVX_XERR;
+   Double_t        LcBar_ORIVX_YERR;
+   Double_t        LcBar_ORIVX_ZERR;
+   Double_t        LcBar_ORIVX_CHI2;
+   Int_t           LcBar_ORIVX_NDOF;
+   Float_t         LcBar_ORIVX_COV_[3][3];
+   Double_t        LcBar_FD_ORIVX;
+   Double_t        LcBar_FDCHI2_ORIVX;
+   Double_t        LcBar_DIRA_ORIVX;
+   Double_t        LcBar_P;
+   Double_t        LcBar_PT;
+   Double_t        LcBar_PE;
+   Double_t        LcBar_PX;
+   Double_t        LcBar_PY;
+   Double_t        LcBar_PZ;
+   Double_t        LcBar_MM;
+   Double_t        LcBar_MMERR;
+   Double_t        LcBar_M;
+   Int_t           LcBar_ID;
+   Double_t        LcBar_TAU;
+   Double_t        LcBar_TAUERR;
+   Double_t        LcBar_TAUCHI2;
+   Double_t        LcBar_TMVA_BDT;
    UInt_t          nCandidate;
    ULong64_t       totCandidates;
    ULong64_t       EventInSequence;
@@ -478,10 +479,19 @@ public :
    TBranch        *b_C_Lc_DTF_CTAU;   //!
    TBranch        *b_C_Lc_DTF_CTAUERR;   //!
    TBranch        *b_C_Lc_DTF_CTAUS;   //!
-   TBranch        *b_C_Xic_DTF_CTAU;   //!
-   TBranch        *b_C_Xic_DTF_CTAUERR;   //!
-   TBranch        *b_C_Xic_DTF_CTAUS;   //!
+   TBranch        *b_C_SumXicIPCHI2;   //!
+   TBranch        *b_C_SumXicPT;   //!
+   TBranch        *b_C_SumXiccIPCHI2;   //!
+   TBranch        *b_C_SumXiccPT;   //!
    TBranch        *b_C_FullFit_nPV;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_M;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_MERR;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_P;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_PERR;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_ctau;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_ctauErr;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_decayLength;   //!
+   TBranch        *b_C_FullFit_Lambda_cplus_0_decayLengthErr;   //!
    TBranch        *b_C_FullFit_Lambda_cplus_M;   //!
    TBranch        *b_C_FullFit_Lambda_cplus_MERR;   //!
    TBranch        *b_C_FullFit_Lambda_cplus_P;   //!
@@ -498,14 +508,6 @@ public :
    TBranch        *b_C_FullFit_PV_Y;   //!
    TBranch        *b_C_FullFit_PV_Z;   //!
    TBranch        *b_C_FullFit_PV_key;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_M;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_MERR;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_P;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_PERR;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_ctau;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_ctauErr;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_decayLength;   //!
-   TBranch        *b_C_FullFit_Xi_cplus_decayLengthErr;   //!
    TBranch        *b_C_FullFit_chi2;   //!
    TBranch        *b_C_FullFit_ctau;   //!
    TBranch        *b_C_FullFit_ctauErr;   //!
@@ -524,6 +526,14 @@ public :
    TBranch        *b_C_MassFit_nIter;   //!
    TBranch        *b_C_MassFit_status;   //!
    TBranch        *b_C_PVFit_nPV;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_M;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_MERR;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_P;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_PERR;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_ctau;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_ctauErr;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_decayLength;   //!
+   TBranch        *b_C_PVFit_Lambda_cplus_0_decayLengthErr;   //!
    TBranch        *b_C_PVFit_Lambda_cplus_M;   //!
    TBranch        *b_C_PVFit_Lambda_cplus_MERR;   //!
    TBranch        *b_C_PVFit_Lambda_cplus_P;   //!
@@ -540,14 +550,6 @@ public :
    TBranch        *b_C_PVFit_PV_Y;   //!
    TBranch        *b_C_PVFit_PV_Z;   //!
    TBranch        *b_C_PVFit_PV_key;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_M;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_MERR;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_P;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_PERR;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_ctau;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_ctauErr;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_decayLength;   //!
-   TBranch        *b_C_PVFit_Xi_cplus_decayLengthErr;   //!
    TBranch        *b_C_PVFit_chi2;   //!
    TBranch        *b_C_PVFit_ctau;   //!
    TBranch        *b_C_PVFit_ctauErr;   //!
@@ -693,59 +695,59 @@ public :
    TBranch        *b_Lc_Hlt1TwoTrackMVADecision_Dec;   //!
    TBranch        *b_Lc_Hlt1TwoTrackMVADecision_TIS;   //!
    TBranch        *b_Lc_Hlt1TwoTrackMVADecision_TOS;   //!
-   TBranch        *b_Xic_ETA;   //!
-   TBranch        *b_Xic_LOKI_IPCHI2;   //!
-   TBranch        *b_Xic_Y;   //!
-   TBranch        *b_Xic_CosTheta;   //!
-   TBranch        *b_Xic_ENDVERTEX_X;   //!
-   TBranch        *b_Xic_ENDVERTEX_Y;   //!
-   TBranch        *b_Xic_ENDVERTEX_Z;   //!
-   TBranch        *b_Xic_ENDVERTEX_XERR;   //!
-   TBranch        *b_Xic_ENDVERTEX_YERR;   //!
-   TBranch        *b_Xic_ENDVERTEX_ZERR;   //!
-   TBranch        *b_Xic_ENDVERTEX_CHI2;   //!
-   TBranch        *b_Xic_ENDVERTEX_NDOF;   //!
-   TBranch        *b_Xic_ENDVERTEX_COV_;   //!
-   TBranch        *b_Xic_OWNPV_X;   //!
-   TBranch        *b_Xic_OWNPV_Y;   //!
-   TBranch        *b_Xic_OWNPV_Z;   //!
-   TBranch        *b_Xic_OWNPV_XERR;   //!
-   TBranch        *b_Xic_OWNPV_YERR;   //!
-   TBranch        *b_Xic_OWNPV_ZERR;   //!
-   TBranch        *b_Xic_OWNPV_CHI2;   //!
-   TBranch        *b_Xic_OWNPV_NDOF;   //!
-   TBranch        *b_Xic_OWNPV_COV_;   //!
-   TBranch        *b_Xic_IP_OWNPV;   //!
-   TBranch        *b_Xic_IPCHI2_OWNPV;   //!
-   TBranch        *b_Xic_FD_OWNPV;   //!
-   TBranch        *b_Xic_FDCHI2_OWNPV;   //!
-   TBranch        *b_Xic_DIRA_OWNPV;   //!
-   TBranch        *b_Xic_ORIVX_X;   //!
-   TBranch        *b_Xic_ORIVX_Y;   //!
-   TBranch        *b_Xic_ORIVX_Z;   //!
-   TBranch        *b_Xic_ORIVX_XERR;   //!
-   TBranch        *b_Xic_ORIVX_YERR;   //!
-   TBranch        *b_Xic_ORIVX_ZERR;   //!
-   TBranch        *b_Xic_ORIVX_CHI2;   //!
-   TBranch        *b_Xic_ORIVX_NDOF;   //!
-   TBranch        *b_Xic_ORIVX_COV_;   //!
-   TBranch        *b_Xic_FD_ORIVX;   //!
-   TBranch        *b_Xic_FDCHI2_ORIVX;   //!
-   TBranch        *b_Xic_DIRA_ORIVX;   //!
-   TBranch        *b_Xic_P;   //!
-   TBranch        *b_Xic_PT;   //!
-   TBranch        *b_Xic_PE;   //!
-   TBranch        *b_Xic_PX;   //!
-   TBranch        *b_Xic_PY;   //!
-   TBranch        *b_Xic_PZ;   //!
-   TBranch        *b_Xic_MM;   //!
-   TBranch        *b_Xic_MMERR;   //!
-   TBranch        *b_Xic_M;   //!
-   TBranch        *b_Xic_ID;   //!
-   TBranch        *b_Xic_TAU;   //!
-   TBranch        *b_Xic_TAUERR;   //!
-   TBranch        *b_Xic_TAUCHI2;   //!
-   TBranch        *b_Xic_TMVA_BDT;   //!
+   TBranch        *b_LcBar_ETA;   //!
+   TBranch        *b_LcBar_LOKI_IPCHI2;   //!
+   TBranch        *b_LcBar_Y;   //!
+   TBranch        *b_LcBar_CosTheta;   //!
+   TBranch        *b_LcBar_ENDVERTEX_X;   //!
+   TBranch        *b_LcBar_ENDVERTEX_Y;   //!
+   TBranch        *b_LcBar_ENDVERTEX_Z;   //!
+   TBranch        *b_LcBar_ENDVERTEX_XERR;   //!
+   TBranch        *b_LcBar_ENDVERTEX_YERR;   //!
+   TBranch        *b_LcBar_ENDVERTEX_ZERR;   //!
+   TBranch        *b_LcBar_ENDVERTEX_CHI2;   //!
+   TBranch        *b_LcBar_ENDVERTEX_NDOF;   //!
+   TBranch        *b_LcBar_ENDVERTEX_COV_;   //!
+   TBranch        *b_LcBar_OWNPV_X;   //!
+   TBranch        *b_LcBar_OWNPV_Y;   //!
+   TBranch        *b_LcBar_OWNPV_Z;   //!
+   TBranch        *b_LcBar_OWNPV_XERR;   //!
+   TBranch        *b_LcBar_OWNPV_YERR;   //!
+   TBranch        *b_LcBar_OWNPV_ZERR;   //!
+   TBranch        *b_LcBar_OWNPV_CHI2;   //!
+   TBranch        *b_LcBar_OWNPV_NDOF;   //!
+   TBranch        *b_LcBar_OWNPV_COV_;   //!
+   TBranch        *b_LcBar_IP_OWNPV;   //!
+   TBranch        *b_LcBar_IPCHI2_OWNPV;   //!
+   TBranch        *b_LcBar_FD_OWNPV;   //!
+   TBranch        *b_LcBar_FDCHI2_OWNPV;   //!
+   TBranch        *b_LcBar_DIRA_OWNPV;   //!
+   TBranch        *b_LcBar_ORIVX_X;   //!
+   TBranch        *b_LcBar_ORIVX_Y;   //!
+   TBranch        *b_LcBar_ORIVX_Z;   //!
+   TBranch        *b_LcBar_ORIVX_XERR;   //!
+   TBranch        *b_LcBar_ORIVX_YERR;   //!
+   TBranch        *b_LcBar_ORIVX_ZERR;   //!
+   TBranch        *b_LcBar_ORIVX_CHI2;   //!
+   TBranch        *b_LcBar_ORIVX_NDOF;   //!
+   TBranch        *b_LcBar_ORIVX_COV_;   //!
+   TBranch        *b_LcBar_FD_ORIVX;   //!
+   TBranch        *b_LcBar_FDCHI2_ORIVX;   //!
+   TBranch        *b_LcBar_DIRA_ORIVX;   //!
+   TBranch        *b_LcBar_P;   //!
+   TBranch        *b_LcBar_PT;   //!
+   TBranch        *b_LcBar_PE;   //!
+   TBranch        *b_LcBar_PX;   //!
+   TBranch        *b_LcBar_PY;   //!
+   TBranch        *b_LcBar_PZ;   //!
+   TBranch        *b_LcBar_MM;   //!
+   TBranch        *b_LcBar_MMERR;   //!
+   TBranch        *b_LcBar_M;   //!
+   TBranch        *b_LcBar_ID;   //!
+   TBranch        *b_LcBar_TAU;   //!
+   TBranch        *b_LcBar_TAUERR;   //!
+   TBranch        *b_LcBar_TAUCHI2;   //!
+   TBranch        *b_LcBar_TMVA_BDT;   //!
    TBranch        *b_nCandidate;   //!
    TBranch        *b_totCandidates;   //!
    TBranch        *b_EventInSequence;   //!
@@ -815,8 +817,8 @@ public :
    TBranch        *b_nMuonCoordsS4;   //!
    TBranch        *b_nMuonTracks;   //!
 
-   LcXic_Class(TTree *tree=0);
-   virtual ~LcXic_Class();
+   DiLc_Class(TTree *tree=0);
+   virtual ~DiLc_Class();
    virtual Int_t    Cut(Long64_t entry);
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
@@ -827,8 +829,8 @@ public :
 
 #endif
 
-#ifdef LcXic_Class_cxx
-LcXic_Class::LcXic_Class(TTree *tree) : fChain(0) 
+#ifdef DiLc_Class_cxx
+DiLc_Class::DiLc_Class(TTree *tree) : fChain(0) 
 {
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
@@ -843,19 +845,19 @@ LcXic_Class::LcXic_Class(TTree *tree) : fChain(0)
    Init(tree);
 }
 
-LcXic_Class::~LcXic_Class()
+DiLc_Class::~DiLc_Class()
 {
    if (!fChain) return;
    delete fChain->GetCurrentFile();
 }
 
-Int_t LcXic_Class::GetEntry(Long64_t entry)
+Int_t DiLc_Class::GetEntry(Long64_t entry)
 {
 // Read contents of entry.
    if (!fChain) return 0;
    return fChain->GetEntry(entry);
 }
-Long64_t LcXic_Class::LoadTree(Long64_t entry)
+Long64_t DiLc_Class::LoadTree(Long64_t entry)
 {
 // Set the environment to read one entry
    if (!fChain) return -5;
@@ -868,7 +870,7 @@ Long64_t LcXic_Class::LoadTree(Long64_t entry)
    return centry;
 }
 
-void LcXic_Class::Init(TTree *tree)
+void DiLc_Class::Init(TTree *tree)
 {
    // The Init() function is called when the selector needs to initialize
    // a new tree or chain. Typically here the branch addresses and branch
@@ -939,10 +941,19 @@ void LcXic_Class::Init(TTree *tree)
    fChain->SetBranchAddress("C_Lc_DTF_CTAU", &C_Lc_DTF_CTAU, &b_C_Lc_DTF_CTAU);
    fChain->SetBranchAddress("C_Lc_DTF_CTAUERR", &C_Lc_DTF_CTAUERR, &b_C_Lc_DTF_CTAUERR);
    fChain->SetBranchAddress("C_Lc_DTF_CTAUS", &C_Lc_DTF_CTAUS, &b_C_Lc_DTF_CTAUS);
-   fChain->SetBranchAddress("C_Xic_DTF_CTAU", &C_Xic_DTF_CTAU, &b_C_Xic_DTF_CTAU);
-   fChain->SetBranchAddress("C_Xic_DTF_CTAUERR", &C_Xic_DTF_CTAUERR, &b_C_Xic_DTF_CTAUERR);
-   fChain->SetBranchAddress("C_Xic_DTF_CTAUS", &C_Xic_DTF_CTAUS, &b_C_Xic_DTF_CTAUS);
+   fChain->SetBranchAddress("C_SumXicIPCHI2", &C_SumXicIPCHI2, &b_C_SumXicIPCHI2);
+   fChain->SetBranchAddress("C_SumXicPT", &C_SumXicPT, &b_C_SumXicPT);
+   fChain->SetBranchAddress("C_SumXiccIPCHI2", &C_SumXiccIPCHI2, &b_C_SumXiccIPCHI2);
+   fChain->SetBranchAddress("C_SumXiccPT", &C_SumXiccPT, &b_C_SumXiccPT);
    fChain->SetBranchAddress("C_FullFit_nPV", &C_FullFit_nPV, &b_C_FullFit_nPV);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_M", C_FullFit_Lambda_cplus_0_M, &b_C_FullFit_Lambda_cplus_0_M);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_MERR", C_FullFit_Lambda_cplus_0_MERR, &b_C_FullFit_Lambda_cplus_0_MERR);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_P", C_FullFit_Lambda_cplus_0_P, &b_C_FullFit_Lambda_cplus_0_P);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_PERR", C_FullFit_Lambda_cplus_0_PERR, &b_C_FullFit_Lambda_cplus_0_PERR);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_ctau", C_FullFit_Lambda_cplus_0_ctau, &b_C_FullFit_Lambda_cplus_0_ctau);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_ctauErr", C_FullFit_Lambda_cplus_0_ctauErr, &b_C_FullFit_Lambda_cplus_0_ctauErr);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_decayLength", C_FullFit_Lambda_cplus_0_decayLength, &b_C_FullFit_Lambda_cplus_0_decayLength);
+   fChain->SetBranchAddress("C_FullFit_Lambda_cplus_0_decayLengthErr", C_FullFit_Lambda_cplus_0_decayLengthErr, &b_C_FullFit_Lambda_cplus_0_decayLengthErr);
    fChain->SetBranchAddress("C_FullFit_Lambda_cplus_M", C_FullFit_Lambda_cplus_M, &b_C_FullFit_Lambda_cplus_M);
    fChain->SetBranchAddress("C_FullFit_Lambda_cplus_MERR", C_FullFit_Lambda_cplus_MERR, &b_C_FullFit_Lambda_cplus_MERR);
    fChain->SetBranchAddress("C_FullFit_Lambda_cplus_P", C_FullFit_Lambda_cplus_P, &b_C_FullFit_Lambda_cplus_P);
@@ -959,14 +970,6 @@ void LcXic_Class::Init(TTree *tree)
    fChain->SetBranchAddress("C_FullFit_PV_Y", C_FullFit_PV_Y, &b_C_FullFit_PV_Y);
    fChain->SetBranchAddress("C_FullFit_PV_Z", C_FullFit_PV_Z, &b_C_FullFit_PV_Z);
    fChain->SetBranchAddress("C_FullFit_PV_key", C_FullFit_PV_key, &b_C_FullFit_PV_key);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_M", C_FullFit_Xi_cplus_M, &b_C_FullFit_Xi_cplus_M);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_MERR", C_FullFit_Xi_cplus_MERR, &b_C_FullFit_Xi_cplus_MERR);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_P", C_FullFit_Xi_cplus_P, &b_C_FullFit_Xi_cplus_P);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_PERR", C_FullFit_Xi_cplus_PERR, &b_C_FullFit_Xi_cplus_PERR);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_ctau", C_FullFit_Xi_cplus_ctau, &b_C_FullFit_Xi_cplus_ctau);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_ctauErr", C_FullFit_Xi_cplus_ctauErr, &b_C_FullFit_Xi_cplus_ctauErr);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_decayLength", C_FullFit_Xi_cplus_decayLength, &b_C_FullFit_Xi_cplus_decayLength);
-   fChain->SetBranchAddress("C_FullFit_Xi_cplus_decayLengthErr", C_FullFit_Xi_cplus_decayLengthErr, &b_C_FullFit_Xi_cplus_decayLengthErr);
    fChain->SetBranchAddress("C_FullFit_chi2", C_FullFit_chi2, &b_C_FullFit_chi2);
    fChain->SetBranchAddress("C_FullFit_ctau", C_FullFit_ctau, &b_C_FullFit_ctau);
    fChain->SetBranchAddress("C_FullFit_ctauErr", C_FullFit_ctauErr, &b_C_FullFit_ctauErr);
@@ -985,6 +988,14 @@ void LcXic_Class::Init(TTree *tree)
    fChain->SetBranchAddress("C_MassFit_nIter", C_MassFit_nIter, &b_C_MassFit_nIter);
    fChain->SetBranchAddress("C_MassFit_status", C_MassFit_status, &b_C_MassFit_status);
    fChain->SetBranchAddress("C_PVFit_nPV", &C_PVFit_nPV, &b_C_PVFit_nPV);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_M", C_PVFit_Lambda_cplus_0_M, &b_C_PVFit_Lambda_cplus_0_M);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_MERR", C_PVFit_Lambda_cplus_0_MERR, &b_C_PVFit_Lambda_cplus_0_MERR);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_P", C_PVFit_Lambda_cplus_0_P, &b_C_PVFit_Lambda_cplus_0_P);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_PERR", C_PVFit_Lambda_cplus_0_PERR, &b_C_PVFit_Lambda_cplus_0_PERR);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_ctau", C_PVFit_Lambda_cplus_0_ctau, &b_C_PVFit_Lambda_cplus_0_ctau);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_ctauErr", C_PVFit_Lambda_cplus_0_ctauErr, &b_C_PVFit_Lambda_cplus_0_ctauErr);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_decayLength", C_PVFit_Lambda_cplus_0_decayLength, &b_C_PVFit_Lambda_cplus_0_decayLength);
+   fChain->SetBranchAddress("C_PVFit_Lambda_cplus_0_decayLengthErr", C_PVFit_Lambda_cplus_0_decayLengthErr, &b_C_PVFit_Lambda_cplus_0_decayLengthErr);
    fChain->SetBranchAddress("C_PVFit_Lambda_cplus_M", C_PVFit_Lambda_cplus_M, &b_C_PVFit_Lambda_cplus_M);
    fChain->SetBranchAddress("C_PVFit_Lambda_cplus_MERR", C_PVFit_Lambda_cplus_MERR, &b_C_PVFit_Lambda_cplus_MERR);
    fChain->SetBranchAddress("C_PVFit_Lambda_cplus_P", C_PVFit_Lambda_cplus_P, &b_C_PVFit_Lambda_cplus_P);
@@ -1001,14 +1012,6 @@ void LcXic_Class::Init(TTree *tree)
    fChain->SetBranchAddress("C_PVFit_PV_Y", C_PVFit_PV_Y, &b_C_PVFit_PV_Y);
    fChain->SetBranchAddress("C_PVFit_PV_Z", C_PVFit_PV_Z, &b_C_PVFit_PV_Z);
    fChain->SetBranchAddress("C_PVFit_PV_key", C_PVFit_PV_key, &b_C_PVFit_PV_key);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_M", C_PVFit_Xi_cplus_M, &b_C_PVFit_Xi_cplus_M);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_MERR", C_PVFit_Xi_cplus_MERR, &b_C_PVFit_Xi_cplus_MERR);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_P", C_PVFit_Xi_cplus_P, &b_C_PVFit_Xi_cplus_P);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_PERR", C_PVFit_Xi_cplus_PERR, &b_C_PVFit_Xi_cplus_PERR);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_ctau", C_PVFit_Xi_cplus_ctau, &b_C_PVFit_Xi_cplus_ctau);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_ctauErr", C_PVFit_Xi_cplus_ctauErr, &b_C_PVFit_Xi_cplus_ctauErr);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_decayLength", C_PVFit_Xi_cplus_decayLength, &b_C_PVFit_Xi_cplus_decayLength);
-   fChain->SetBranchAddress("C_PVFit_Xi_cplus_decayLengthErr", C_PVFit_Xi_cplus_decayLengthErr, &b_C_PVFit_Xi_cplus_decayLengthErr);
    fChain->SetBranchAddress("C_PVFit_chi2", C_PVFit_chi2, &b_C_PVFit_chi2);
    fChain->SetBranchAddress("C_PVFit_ctau", C_PVFit_ctau, &b_C_PVFit_ctau);
    fChain->SetBranchAddress("C_PVFit_ctauErr", C_PVFit_ctauErr, &b_C_PVFit_ctauErr);
@@ -1154,59 +1157,59 @@ void LcXic_Class::Init(TTree *tree)
    fChain->SetBranchAddress("Lc_Hlt1TwoTrackMVADecision_Dec", &Lc_Hlt1TwoTrackMVADecision_Dec, &b_Lc_Hlt1TwoTrackMVADecision_Dec);
    fChain->SetBranchAddress("Lc_Hlt1TwoTrackMVADecision_TIS", &Lc_Hlt1TwoTrackMVADecision_TIS, &b_Lc_Hlt1TwoTrackMVADecision_TIS);
    fChain->SetBranchAddress("Lc_Hlt1TwoTrackMVADecision_TOS", &Lc_Hlt1TwoTrackMVADecision_TOS, &b_Lc_Hlt1TwoTrackMVADecision_TOS);
-   fChain->SetBranchAddress("Xic_ETA", &Xic_ETA, &b_Xic_ETA);
-   fChain->SetBranchAddress("Xic_LOKI_IPCHI2", &Xic_LOKI_IPCHI2, &b_Xic_LOKI_IPCHI2);
-   fChain->SetBranchAddress("Xic_Y", &Xic_Y, &b_Xic_Y);
-   fChain->SetBranchAddress("Xic_CosTheta", &Xic_CosTheta, &b_Xic_CosTheta);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_X", &Xic_ENDVERTEX_X, &b_Xic_ENDVERTEX_X);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_Y", &Xic_ENDVERTEX_Y, &b_Xic_ENDVERTEX_Y);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_Z", &Xic_ENDVERTEX_Z, &b_Xic_ENDVERTEX_Z);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_XERR", &Xic_ENDVERTEX_XERR, &b_Xic_ENDVERTEX_XERR);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_YERR", &Xic_ENDVERTEX_YERR, &b_Xic_ENDVERTEX_YERR);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_ZERR", &Xic_ENDVERTEX_ZERR, &b_Xic_ENDVERTEX_ZERR);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_CHI2", &Xic_ENDVERTEX_CHI2, &b_Xic_ENDVERTEX_CHI2);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_NDOF", &Xic_ENDVERTEX_NDOF, &b_Xic_ENDVERTEX_NDOF);
-   fChain->SetBranchAddress("Xic_ENDVERTEX_COV_", Xic_ENDVERTEX_COV_, &b_Xic_ENDVERTEX_COV_);
-   fChain->SetBranchAddress("Xic_OWNPV_X", &Xic_OWNPV_X, &b_Xic_OWNPV_X);
-   fChain->SetBranchAddress("Xic_OWNPV_Y", &Xic_OWNPV_Y, &b_Xic_OWNPV_Y);
-   fChain->SetBranchAddress("Xic_OWNPV_Z", &Xic_OWNPV_Z, &b_Xic_OWNPV_Z);
-   fChain->SetBranchAddress("Xic_OWNPV_XERR", &Xic_OWNPV_XERR, &b_Xic_OWNPV_XERR);
-   fChain->SetBranchAddress("Xic_OWNPV_YERR", &Xic_OWNPV_YERR, &b_Xic_OWNPV_YERR);
-   fChain->SetBranchAddress("Xic_OWNPV_ZERR", &Xic_OWNPV_ZERR, &b_Xic_OWNPV_ZERR);
-   fChain->SetBranchAddress("Xic_OWNPV_CHI2", &Xic_OWNPV_CHI2, &b_Xic_OWNPV_CHI2);
-   fChain->SetBranchAddress("Xic_OWNPV_NDOF", &Xic_OWNPV_NDOF, &b_Xic_OWNPV_NDOF);
-   fChain->SetBranchAddress("Xic_OWNPV_COV_", Xic_OWNPV_COV_, &b_Xic_OWNPV_COV_);
-   fChain->SetBranchAddress("Xic_IP_OWNPV", &Xic_IP_OWNPV, &b_Xic_IP_OWNPV);
-   fChain->SetBranchAddress("Xic_IPCHI2_OWNPV", &Xic_IPCHI2_OWNPV, &b_Xic_IPCHI2_OWNPV);
-   fChain->SetBranchAddress("Xic_FD_OWNPV", &Xic_FD_OWNPV, &b_Xic_FD_OWNPV);
-   fChain->SetBranchAddress("Xic_FDCHI2_OWNPV", &Xic_FDCHI2_OWNPV, &b_Xic_FDCHI2_OWNPV);
-   fChain->SetBranchAddress("Xic_DIRA_OWNPV", &Xic_DIRA_OWNPV, &b_Xic_DIRA_OWNPV);
-   fChain->SetBranchAddress("Xic_ORIVX_X", &Xic_ORIVX_X, &b_Xic_ORIVX_X);
-   fChain->SetBranchAddress("Xic_ORIVX_Y", &Xic_ORIVX_Y, &b_Xic_ORIVX_Y);
-   fChain->SetBranchAddress("Xic_ORIVX_Z", &Xic_ORIVX_Z, &b_Xic_ORIVX_Z);
-   fChain->SetBranchAddress("Xic_ORIVX_XERR", &Xic_ORIVX_XERR, &b_Xic_ORIVX_XERR);
-   fChain->SetBranchAddress("Xic_ORIVX_YERR", &Xic_ORIVX_YERR, &b_Xic_ORIVX_YERR);
-   fChain->SetBranchAddress("Xic_ORIVX_ZERR", &Xic_ORIVX_ZERR, &b_Xic_ORIVX_ZERR);
-   fChain->SetBranchAddress("Xic_ORIVX_CHI2", &Xic_ORIVX_CHI2, &b_Xic_ORIVX_CHI2);
-   fChain->SetBranchAddress("Xic_ORIVX_NDOF", &Xic_ORIVX_NDOF, &b_Xic_ORIVX_NDOF);
-   fChain->SetBranchAddress("Xic_ORIVX_COV_", Xic_ORIVX_COV_, &b_Xic_ORIVX_COV_);
-   fChain->SetBranchAddress("Xic_FD_ORIVX", &Xic_FD_ORIVX, &b_Xic_FD_ORIVX);
-   fChain->SetBranchAddress("Xic_FDCHI2_ORIVX", &Xic_FDCHI2_ORIVX, &b_Xic_FDCHI2_ORIVX);
-   fChain->SetBranchAddress("Xic_DIRA_ORIVX", &Xic_DIRA_ORIVX, &b_Xic_DIRA_ORIVX);
-   fChain->SetBranchAddress("Xic_P", &Xic_P, &b_Xic_P);
-   fChain->SetBranchAddress("Xic_PT", &Xic_PT, &b_Xic_PT);
-   fChain->SetBranchAddress("Xic_PE", &Xic_PE, &b_Xic_PE);
-   fChain->SetBranchAddress("Xic_PX", &Xic_PX, &b_Xic_PX);
-   fChain->SetBranchAddress("Xic_PY", &Xic_PY, &b_Xic_PY);
-   fChain->SetBranchAddress("Xic_PZ", &Xic_PZ, &b_Xic_PZ);
-   fChain->SetBranchAddress("Xic_MM", &Xic_MM, &b_Xic_MM);
-   fChain->SetBranchAddress("Xic_MMERR", &Xic_MMERR, &b_Xic_MMERR);
-   fChain->SetBranchAddress("Xic_M", &Xic_M, &b_Xic_M);
-   fChain->SetBranchAddress("Xic_ID", &Xic_ID, &b_Xic_ID);
-   fChain->SetBranchAddress("Xic_TAU", &Xic_TAU, &b_Xic_TAU);
-   fChain->SetBranchAddress("Xic_TAUERR", &Xic_TAUERR, &b_Xic_TAUERR);
-   fChain->SetBranchAddress("Xic_TAUCHI2", &Xic_TAUCHI2, &b_Xic_TAUCHI2);
-   fChain->SetBranchAddress("Xic_TMVA_BDT", &Xic_TMVA_BDT, &b_Xic_TMVA_BDT);
+   fChain->SetBranchAddress("LcBar_ETA", &LcBar_ETA, &b_LcBar_ETA);
+   fChain->SetBranchAddress("LcBar_LOKI_IPCHI2", &LcBar_LOKI_IPCHI2, &b_LcBar_LOKI_IPCHI2);
+   fChain->SetBranchAddress("LcBar_Y", &LcBar_Y, &b_LcBar_Y);
+   fChain->SetBranchAddress("LcBar_CosTheta", &LcBar_CosTheta, &b_LcBar_CosTheta);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_X", &LcBar_ENDVERTEX_X, &b_LcBar_ENDVERTEX_X);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_Y", &LcBar_ENDVERTEX_Y, &b_LcBar_ENDVERTEX_Y);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_Z", &LcBar_ENDVERTEX_Z, &b_LcBar_ENDVERTEX_Z);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_XERR", &LcBar_ENDVERTEX_XERR, &b_LcBar_ENDVERTEX_XERR);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_YERR", &LcBar_ENDVERTEX_YERR, &b_LcBar_ENDVERTEX_YERR);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_ZERR", &LcBar_ENDVERTEX_ZERR, &b_LcBar_ENDVERTEX_ZERR);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_CHI2", &LcBar_ENDVERTEX_CHI2, &b_LcBar_ENDVERTEX_CHI2);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_NDOF", &LcBar_ENDVERTEX_NDOF, &b_LcBar_ENDVERTEX_NDOF);
+   fChain->SetBranchAddress("LcBar_ENDVERTEX_COV_", LcBar_ENDVERTEX_COV_, &b_LcBar_ENDVERTEX_COV_);
+   fChain->SetBranchAddress("LcBar_OWNPV_X", &LcBar_OWNPV_X, &b_LcBar_OWNPV_X);
+   fChain->SetBranchAddress("LcBar_OWNPV_Y", &LcBar_OWNPV_Y, &b_LcBar_OWNPV_Y);
+   fChain->SetBranchAddress("LcBar_OWNPV_Z", &LcBar_OWNPV_Z, &b_LcBar_OWNPV_Z);
+   fChain->SetBranchAddress("LcBar_OWNPV_XERR", &LcBar_OWNPV_XERR, &b_LcBar_OWNPV_XERR);
+   fChain->SetBranchAddress("LcBar_OWNPV_YERR", &LcBar_OWNPV_YERR, &b_LcBar_OWNPV_YERR);
+   fChain->SetBranchAddress("LcBar_OWNPV_ZERR", &LcBar_OWNPV_ZERR, &b_LcBar_OWNPV_ZERR);
+   fChain->SetBranchAddress("LcBar_OWNPV_CHI2", &LcBar_OWNPV_CHI2, &b_LcBar_OWNPV_CHI2);
+   fChain->SetBranchAddress("LcBar_OWNPV_NDOF", &LcBar_OWNPV_NDOF, &b_LcBar_OWNPV_NDOF);
+   fChain->SetBranchAddress("LcBar_OWNPV_COV_", LcBar_OWNPV_COV_, &b_LcBar_OWNPV_COV_);
+   fChain->SetBranchAddress("LcBar_IP_OWNPV", &LcBar_IP_OWNPV, &b_LcBar_IP_OWNPV);
+   fChain->SetBranchAddress("LcBar_IPCHI2_OWNPV", &LcBar_IPCHI2_OWNPV, &b_LcBar_IPCHI2_OWNPV);
+   fChain->SetBranchAddress("LcBar_FD_OWNPV", &LcBar_FD_OWNPV, &b_LcBar_FD_OWNPV);
+   fChain->SetBranchAddress("LcBar_FDCHI2_OWNPV", &LcBar_FDCHI2_OWNPV, &b_LcBar_FDCHI2_OWNPV);
+   fChain->SetBranchAddress("LcBar_DIRA_OWNPV", &LcBar_DIRA_OWNPV, &b_LcBar_DIRA_OWNPV);
+   fChain->SetBranchAddress("LcBar_ORIVX_X", &LcBar_ORIVX_X, &b_LcBar_ORIVX_X);
+   fChain->SetBranchAddress("LcBar_ORIVX_Y", &LcBar_ORIVX_Y, &b_LcBar_ORIVX_Y);
+   fChain->SetBranchAddress("LcBar_ORIVX_Z", &LcBar_ORIVX_Z, &b_LcBar_ORIVX_Z);
+   fChain->SetBranchAddress("LcBar_ORIVX_XERR", &LcBar_ORIVX_XERR, &b_LcBar_ORIVX_XERR);
+   fChain->SetBranchAddress("LcBar_ORIVX_YERR", &LcBar_ORIVX_YERR, &b_LcBar_ORIVX_YERR);
+   fChain->SetBranchAddress("LcBar_ORIVX_ZERR", &LcBar_ORIVX_ZERR, &b_LcBar_ORIVX_ZERR);
+   fChain->SetBranchAddress("LcBar_ORIVX_CHI2", &LcBar_ORIVX_CHI2, &b_LcBar_ORIVX_CHI2);
+   fChain->SetBranchAddress("LcBar_ORIVX_NDOF", &LcBar_ORIVX_NDOF, &b_LcBar_ORIVX_NDOF);
+   fChain->SetBranchAddress("LcBar_ORIVX_COV_", LcBar_ORIVX_COV_, &b_LcBar_ORIVX_COV_);
+   fChain->SetBranchAddress("LcBar_FD_ORIVX", &LcBar_FD_ORIVX, &b_LcBar_FD_ORIVX);
+   fChain->SetBranchAddress("LcBar_FDCHI2_ORIVX", &LcBar_FDCHI2_ORIVX, &b_LcBar_FDCHI2_ORIVX);
+   fChain->SetBranchAddress("LcBar_DIRA_ORIVX", &LcBar_DIRA_ORIVX, &b_LcBar_DIRA_ORIVX);
+   fChain->SetBranchAddress("LcBar_P", &LcBar_P, &b_LcBar_P);
+   fChain->SetBranchAddress("LcBar_PT", &LcBar_PT, &b_LcBar_PT);
+   fChain->SetBranchAddress("LcBar_PE", &LcBar_PE, &b_LcBar_PE);
+   fChain->SetBranchAddress("LcBar_PX", &LcBar_PX, &b_LcBar_PX);
+   fChain->SetBranchAddress("LcBar_PY", &LcBar_PY, &b_LcBar_PY);
+   fChain->SetBranchAddress("LcBar_PZ", &LcBar_PZ, &b_LcBar_PZ);
+   fChain->SetBranchAddress("LcBar_MM", &LcBar_MM, &b_LcBar_MM);
+   fChain->SetBranchAddress("LcBar_MMERR", &LcBar_MMERR, &b_LcBar_MMERR);
+   fChain->SetBranchAddress("LcBar_M", &LcBar_M, &b_LcBar_M);
+   fChain->SetBranchAddress("LcBar_ID", &LcBar_ID, &b_LcBar_ID);
+   fChain->SetBranchAddress("LcBar_TAU", &LcBar_TAU, &b_LcBar_TAU);
+   fChain->SetBranchAddress("LcBar_TAUERR", &LcBar_TAUERR, &b_LcBar_TAUERR);
+   fChain->SetBranchAddress("LcBar_TAUCHI2", &LcBar_TAUCHI2, &b_LcBar_TAUCHI2);
+   fChain->SetBranchAddress("LcBar_TMVA_BDT", &LcBar_TMVA_BDT, &b_LcBar_TMVA_BDT);
    fChain->SetBranchAddress("nCandidate", &nCandidate, &b_nCandidate);
    fChain->SetBranchAddress("totCandidates", &totCandidates, &b_totCandidates);
    fChain->SetBranchAddress("EventInSequence", &EventInSequence, &b_EventInSequence);
@@ -1278,7 +1281,7 @@ void LcXic_Class::Init(TTree *tree)
    Notify();
 }
 
-Bool_t LcXic_Class::Notify()
+Bool_t DiLc_Class::Notify()
 {
    // The Notify() function is called when a new file is opened. This
    // can be either for a new TTree in a TChain or when when a new TTree
@@ -1289,18 +1292,18 @@ Bool_t LcXic_Class::Notify()
    return kTRUE;
 }
 
-void LcXic_Class::Show(Long64_t entry)
+void DiLc_Class::Show(Long64_t entry)
 {
 // Print contents of entry.
 // If entry is not specified, print current entry
    if (!fChain) return;
    fChain->Show(entry);
 }
-Int_t LcXic_Class::Cut(Long64_t entry)
+Int_t DiLc_Class::Cut(Long64_t entry)
 {
 // This function may be called from Loop.
 // returns  1 if entry is accepted.
 // returns -1 otherwise.
    return 1;
 }
-#endif // #ifdef LcXic_Class_cxx
+#endif // #ifdef DiLc_Class_cxx

@@ -26,13 +26,14 @@
 using namespace RooFit;
 using namespace RooStats;
 
-void fitLcXic()
+void fitsPlot()
 {
    gROOT->ProcessLine(".x /home/Koishi/LcXic/datafiles/lhcbStyle.C");
 
+   TCut tauCut("C_TAU*1000<0.12");
    TChain* chain = new TChain();
    chain->Add("/home/Koishi/LcXic/datafiles/XiccTuple.root/DecayTree");
-   TTree* newtree = chain->CopyTree("");
+   TTree* newtree = chain->CopyTree(tauCut);
 
    RooArgSet vars("Variables");
    RooRealVar m_Lc("Lc_M","M(#Lambda_{c}^{+})",2210,2360,"MeV/c^{2}");

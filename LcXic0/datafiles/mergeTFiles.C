@@ -10,9 +10,9 @@ void loadFilesToChain (TChain *chain, const std::string &filename){
 void mergeTFiles()
 {
   TChain *chain = new TChain("XiccTuple/DecayTree");
-  loadFilesToChain( chain, "/afs/ihep.ac.cn/users/j/jibo/public/GangaScripts/LcXic0_2016_2024_02_27.txt");
-  loadFilesToChain( chain, "/afs/ihep.ac.cn/users/j/jibo/public/GangaScripts/LcXic0_2017_2024_02_27.txt");
-  loadFilesToChain( chain, "/afs/ihep.ac.cn/users/j/jibo/public/GangaScripts/LcXic0_2018_2024_02_27.txt");
+  loadFilesToChain( chain, "/afs/ihep.ac.cn/users/j/jibo/public/GangaScripts/LcXic_2016_2024_02_19.txt");
+  loadFilesToChain( chain, "/afs/ihep.ac.cn/users/j/jibo/public/GangaScripts/LcXic_2017_2024_02_19.txt");
+  loadFilesToChain( chain, "/afs/ihep.ac.cn/users/j/jibo/public/GangaScripts/LcXic_2018_2024_02_19.txt");
 
   TFile *outputFile = new TFile("XiccTuple.root", "RECREATE");
   TTree *outputTree = chain->CloneTree();

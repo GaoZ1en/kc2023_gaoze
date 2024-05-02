@@ -7,7 +7,9 @@ void drawCMass()
 
   TChain *chain = new TChain("DecayTree");
   chain->Add("/home/Koishi/LcXic/datafiles/XiccTuple_sw.root");
+
   
+
   //...mass range
   const Double_t MassMin = 4755;
   const Double_t MassMax = 6755;

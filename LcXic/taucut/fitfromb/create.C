@@ -2,7 +2,7 @@
 
 void create()
 {
-   TFile *input_f = new TFile("/home/Koishi/LcXic0/datafiles/XiccTuple_sw.root");
+   TFile *input_f = new TFile("/home/Koishi/LcXic/taucut/fitfromb/XiccTuple_sw.root");
    TFile *output_f = new TFile("XiccTuple_sw_corrected.root","RECREATE");
    TTree *input_t = (TTree*)input_f->Get("DecayTree");
    TTree *output_t = input_t->CloneTree(0);
@@ -16,7 +16,7 @@ void create()
    for(int i=0;i<input_t->GetEntries();i++)
    {
       input_t->GetEntry(i);
-      C_M_corrected = C_M-Lc_M-Xic_M+2286.46+2470.44;
+      C_M_corrected = C_M-Lc_M-Xic_M+2286.46+2467.71;
       output_t->Fill();
    }
 
