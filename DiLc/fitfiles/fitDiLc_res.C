@@ -16,7 +16,7 @@
 //#include "RooStats/ModelConfig.h"
 //#include "RooStats/ProfileLikelihoodCalculator.h"
 //#include "RooStats/HypoTestResult.h"
-//#include "RooStats/SPlot.h"
+#include "RooStats/SPlot.h"
 #include "TIterator.h"
 //#include "../MC_run2/parJ_MC.h"
 #define DiLc_Class_cxx
@@ -27,17 +27,17 @@ using namespace RooStats;
 
 void fitDiLc_res()
 {
-   gROOT->ProcessLine(".x /afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/lhcbStyle.C");
+   gROOT->ProcessLine(".x /home/Koishi/kc2023/DiLc/datafiles/lhcbStyle.C");
 
-   TCut LcCut("Lc_TMVA_BDT>-0.27 && LcBar_TMVA_BDT>-0.27");
+   TCut LcCut("Lc_TMVA_BDT>-0.27 && LcBar_TMVA_BDT>-0.27 && Lc_M>2220 && LcBar_M>2220 && Lc_M<2360 && LcBar_M<2360");
 
    TChain *chain = new TChain("DecayTree");
-   chain->AddFile("/afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/XiccTuple_sw.root");
-   TH1F *hRS = new TH1F("hRS","",500,4575,6075);
-   TTree *tree = chain->CopyTree(LcCut);
-   tree->Project("hRS","C_M-Lc_M-LcBar_M+2286.99*2","nsig_sw",LcCut);
-   RooRealVar *m = new RooRealVar("C_M","M(#Lambda_{c}^{+}#bar{#Lambda_{c}^{#minus}})",4575,6075,"MeV/c^{2}");
-   RooDataHist *data = new RooDataHist("data","dataset with m", *m, hRS);
+   chain->AddFile("/home/Koishi/kc2023/DiLc/datafiles/XiccTuple_sw_corrected.root");
+
+   RooRealVar *m = new RooRealVar("C_M_corrected","M(#Lambda_{c}^{+}#bar{#Lambda}_{c}^{#minux})",4575,6075,"MeV/c^{2}");
+   RooRealVar *nsig_sw = new RooRealVar("nsig_sw","signal weight",-2,2);
+
+   RooDataSet *data = new RooDataSet("data","dataset with m", chain->CopyTree(LcCut),RooArgSet(*m,*nsig_sw),nullptr,"nsig_sw");
 
    // **** signal,crystal ball ****
    // #### sig ####
@@ -88,7 +88,7 @@ void fitDiLc_res()
    RooRealVar *Nsig5 = new RooRealVar("nsig5","Number of signal events",5000,0,10000);
    RooRealVar *Nsig6 = new RooRealVar("nsig6","Number of signal events",5000,0,10000);
    RooRealVar *Nsig7 = new RooRealVar("nsig7","Number of signal events",5000,0,10000);
-   RooRealVar *Nbkg = new RooRealVar("nbkg","Number of bkg",5000,0,10000);
+   RooRealVar *Nbkg = new RooRealVar("nbkg","Number of bkg",1000,0,10000);
 
    // **** total pdf and fit ****
    RooAbsPdf *total= new RooAddPdf("total","sum of signal and background PDF's",RooArgList(*sig2,*sig3,*sig4,*sig5,*sig6,*sig7,*bkg),RooArgList(*Nsig2,*Nsig3,*Nsig4,*Nsig5,*Nsig6,*Nsig7,*Nbkg));
@@ -139,13 +139,13 @@ void fitDiLc_res()
    legend->SetTextSize(0.04);
    legend->AddEntry("Data","Data");
    legend->AddEntry("total fit","Total fit","l");
-   legend->AddEntry("1?"        ,"unknown state 1, mean = 4598.77#pm0.91 MeV,   width = 33.91#pm4.22 MeV,   N = 1766#pm232","l");
-   legend->AddEntry("#psi(4660)","#psi(4660)            , mean = 4661.88#pm4.08 MeV,   width = 107.4#pm15.0 MeV,   N = 3443#pm459","l");
-   legend->AddEntry("#psi(4790)","#psi(4790)            , mean = 4763.74#pm9.31 MeV,   width = 68.78#pm26.60 MeV, N = 325#pm197","l");
-   legend->AddEntry("#psi(4900)","#psi(4900)            , mean = 4900.55#pm3.47 MeV,   width = 44.93#pm14.03 MeV, N = 277#pm68","l");
-   legend->AddEntry("B^{0}_{s}" ,"B_{s}                      , mean = 5366.92 MeV,            width = 6.84 MeV,                N = 42#pm10","l");
-   legend->AddEntry("2?"        ,"unknown state 2, mean = 5025.62#pm10.35 MeV, width = 137.6#pm26.6 MeV, N = 484#pm96","l");
-   legend->AddEntry("WS background","WS background","l");
+   legend->AddEntry("1?",Form("unknown state 1:mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean2->getVal(),mean2->getError(),width2->getVal(),width2->getError(),Nsig2->getVal(),Nsig2->getError()),"l");
+   legend->AddEntry("#psi(4660)",Form("#psi(4660):mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean3->getVal(),mean3->getError(),width3->getVal(),width3->getError(),Nsig3->getVal(),Nsig3->getError()),"l");
+   legend->AddEntry("#psi(4790)",Form("#psi(4790):mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean4->getVal(),mean4->getError(),width4->getVal(),width4->getError(),Nsig4->getVal(),Nsig4->getError()),"l");
+   legend->AddEntry("#psi(4900)",Form("#psi(4900):mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean5->getVal(),mean5->getError(),width5->getVal(),width5->getError(),Nsig5->getVal(),Nsig5->getError()),"l");
+   legend->AddEntry("B^{0}_{s}",Form("B_{s}^{0}:mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean6->getVal(),mean6->getError(),width6->getVal(),width6->getError(),Nsig6->getVal(),Nsig6->getError()),"l");
+   legend->AddEntry("2?",Form("unknown state 2:mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean7->getVal(),mean7->getError(),width7->getVal(),width7->getError(),Nsig7->getVal(),Nsig7->getError()),"l");
+   legend->AddEntry("background","background","l");
    legend->Draw();
 
    c1->cd(1);
@@ -163,7 +163,7 @@ void fitDiLc_res()
    mframe1->SetMaximum(5.0);
    mframe1->Draw();
 
-   //c1->SaveAs("fitDiLc_res.png");
-   //c1->SaveAs("fitDiLc_res.eps");
-   //c1->SaveAs("fitDiLc_res.pdf");
+   c1->SaveAs("fitDiLc_res.png");
+   c1->SaveAs("fitDiLc_res.eps");
+   c1->SaveAs("fitDiLc_res.pdf");
 } 

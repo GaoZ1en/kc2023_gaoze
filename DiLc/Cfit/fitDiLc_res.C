@@ -27,13 +27,14 @@ using namespace RooStats;
 
 void fitDiLc_res()
 {
-   gROOT->ProcessLine(".x /afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/lhcbStyle.C");
+   gROOT->ProcessLine(".x /home/Koishi/kc2023/DiLc/datafiles/lhcbStyle.C");
 
    TCut LcCut("Lc_TMVA_BDT>-0.27 && LcBar_TMVA_BDT>-0.27");
 
    TChain *chain = new TChain("DecayTree");
-   chain->AddFile("/afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/XiccTuple_sw_corrected.root");
+   chain->AddFile("/home/Koishi/kc2023/DiLc/datafiles/XiccTuple_sw_corrected.root");
    RooRealVar *m = new RooRealVar("C_M_corrected","M(#Lambda_{c}^{+}#bar{#Lambda_{c}^{#minus}})",4575,6075,"MeV/c^{2}");
+   RooRealVar *nsig_sw = new RooRealVar("nsig_sw","nsig_sw",-2,2);
    RooDataSet *data = new RooDataSet("data","dataset with m",chain->CopyTree(LcCut),RooArgSet(*m));
 
    // **** signal,crystal ball ****
@@ -135,7 +136,7 @@ void fitDiLc_res()
    total->plotOn(mframe,Components(*sig6),LineColor(7),LineStyle(kDashed),Name("B^{0}_{s}"));
    total->plotOn(mframe,Components(*sig7),LineColor(6),LineStyle(kDashed),Name("2?"));
    total->plotOn(mframe,Components(*bkg),LineColor(kBlue),LineStyle(kDashed),Name("WS background"));
-   total->plotOn(mframe,Components(*bkg_comb),LineColor(kBlue+1),LineStyle(kDashed),Name("sideband background"));
+   total->plotOn(mframe,Components(*bkg_comb),LineColor(kGray),LineStyle(kDashed),Name("combinatorial background"));
    total->plotOn(mframe,Name("total fit")); 
    //total->paramOn(mframe,Layout(0.70,0.95,0.97));
    //mframe->getAttText()->SetTextSize(0.04);
@@ -166,7 +167,8 @@ void fitDiLc_res()
    legend->AddEntry("#psi(4900)",Form("#psi(4900):mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean5->getVal(),mean5->getError(),width5->getVal(),width5->getError(),Nsig5->getVal(),Nsig5->getError()),"l");
    legend->AddEntry("B^{0}_{s}",Form("B_{s}^{0}:mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean6->getVal(),mean6->getError(),width6->getVal(),width6->getError(),Nsig6->getVal(),Nsig6->getError()),"l");
    legend->AddEntry("2?",Form("unknown state 2:mean=%.2f#pm%.2f, width=%.2f#pm%.2f, N=%.2f#pm%.2f",mean7->getVal(),mean7->getError(),width7->getVal(),width7->getError(),Nsig7->getVal(),Nsig7->getError()),"l");
-   legend->AddEntry("background","background","l");
+   legend->AddEntry("WS background","background","l");
+   legend->AddEntry("combinatorial background", "combinatorial background","l");
    legend->Draw();
 
    c1->cd(1);
@@ -184,7 +186,7 @@ void fitDiLc_res()
    mframe1->SetMaximum(5.0);
    mframe1->Draw();
 
-   //c1->SaveAs("fitDiLc_res.png");
-   //c1->SaveAs("fitDiLc_res.eps");
-   //c1->SaveAs("fitDiLc_res.pdf");
+   c1->SaveAs("fitDiLc_res.png");
+   c1->SaveAs("fitDiLc_res.eps");
+   c1->SaveAs("fitDiLc_res.pdf");
 } 

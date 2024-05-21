@@ -10,7 +10,7 @@ void drawHist(TTree* tree1,
               Bool_t useLogy = false, 
               Int_t nBins=100){
   
-  gROOT->ProcessLine(".x /afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/lhcbStyle.C");
+  gROOT->ProcessLine(".x /home/Koishi/kc2023/DiLc/datafiles/lhcbStyle.C");
  
   TCanvas *MyCan = new TCanvas("MyCan", "",600, 480 );
   gStyle->SetNdivisions(505,"xy");
@@ -19,11 +19,11 @@ void drawHist(TTree* tree1,
   else gPad->SetLogy(0);
 
   TCut LcCut("Lc_TMVA_BDT>0-0.27 && LcBar_TMVA_BDT>-0.27");
-  TCut LcMCut_RR("Lc_M>2300 && Lc_M<2360 && LcBar_M>2300 && LcBar_M<2360");
-  TCut LcMCut_RL("Lc_M>2300 && Lc_M<2360 && LcBar_M>2300 && LcBar_M<2360");
-  TCut LcMCut_LR("Lc_M>2220 && Lc_M<2270 && LcBar_M>2300 && LcBar_M<2360");
-  TCut LcMCut_LL("Lc_M>2220 && Lc_M<2270 && LcBar_M>2220 && LcBar_M<2270");
-  TCut LcMCut = LcMCut_RR || LcMCut_RL || LcMCut_LR || LcMCut_LL;
+  TCut LcMCut_RU("Lc_M>2310 && Lc_M<2350 && LcBar_M>2310 && LcBar_M<2350");
+  TCut LcMCut_RD("Lc_M>2310 && Lc_M<2350 && LcBar_M>2220 && LcBar_M<2260");
+  TCut LcMCut_LU("Lc_M>2220 && Lc_M<2260 && LcBar_M>2310 && LcBar_M<2350");
+  TCut LcMCut_LD("Lc_M>2220 && Lc_M<2260 && LcBar_M>2220 && LcBar_M<2260");
+  TCut LcMCut = LcMCut_RU || LcMCut_RD || LcMCut_LU || LcMCut_LD;
   TCut totCuts = LcCut && LcMCut;
 
   TH1F *h_sb = new TH1F("h_sb", "", nBins, xlow, xup);
@@ -101,15 +101,15 @@ void drawHist(TTree* tree1,
   leg->AddEntry(h_sb,"sideband","LP");
   leg->Draw();
 
-  TString epsName, pdfName, gifName;
+  TString epsName, pdfName, pngName;
   if(!fileName){ 
     epsName = variable ;
     pdfName = variable ;
-    gifName = variable ;
+    pngName = variable ;
   } else{
     epsName = fileName ;
     pdfName = fileName ;
-    gifName = fileName ;
+    pngName = fileName ;
   }
   
   epsName += ".eps";
@@ -118,8 +118,8 @@ void drawHist(TTree* tree1,
   pdfName += ".pdf";
   MyCan->Print( pdfName ); 
   
-  gifName += ".gif";
-  MyCan->Print( gifName );
+  pngName += ".png";
+  MyCan->Print( pngName );
 
   //delete h_sp;
   //delete h_sb;
@@ -130,8 +130,8 @@ void drawHist(TTree* tree1,
 
 void compDist(){
 
-  TFile *fSig = new TFile("/afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/XiccTuple_sw.root");
+  TFile *fSig = new TFile("/home/Koishi/kc2023/DiLc/datafiles/XiccTuple_sw.root");
   TTree *tSig = (TTree*)fSig->Get("DecayTree");
   drawHist( tSig, tSig, "C_M-Lc_M-LcBar_M+2286.99*2",
-            "m(#Lambda_{c}^{+}#bar{#Lambda_{c}^{#minus}})[MeV]", 4550, 6000, "sp&sb" );
+            "m(#Lambda_{c}^{+}#bar{#Lambda_{c}^{#minus}})[MeV]", 4575, 6075, "sp&sb" );
 }

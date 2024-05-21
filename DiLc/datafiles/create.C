@@ -2,10 +2,10 @@
 
 void create()
 {
-   TFile *input_f = new TFile("/afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/XiccTuple_sw.root");
+   TFile *input_f = new TFile("/home/Koishi/kc2023/DiLc/datafiles/XiccTuple_sw.root","READ");
    TFile *output_f = new TFile("XiccTuple_sw_corrected.root","RECREATE");
    TTree *input_t = (TTree*)input_f->Get("DecayTree");
-   TTree *output_t = input_t->CopyTree("");
+   TTree *output_t = input_t->CloneTree(0);
 
    Double_t C_M, Lc_M, LcBar_M, C_M_corrected;
    input_t->SetBranchAddress("C_M",&C_M);

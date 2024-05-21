@@ -28,10 +28,10 @@ using namespace RooStats;
 
 void fitLcXic()
 {
-   gROOT->ProcessLine(".x /home/Koishi/LcXic/datafiles/lhcbStyle.C");
+   gROOT->ProcessLine(".x /home/Koishi/kc2023/LcXic/datafiles/lhcbStyle.C");
 
    TChain* chain = new TChain();
-   chain->Add("/home/Koishi/LcXic/datafiles/XiccTuple.root/DecayTree");
+   chain->Add("/home/Koishi/kc2023/LcXic/datafiles/XiccTuple.root/DecayTree");
    TTree* newtree = chain->CopyTree("");
 
    RooArgSet vars("Variables");
@@ -135,7 +135,7 @@ void fitLcXic()
    total.fitTo(data, Minos(kTRUE), Extended(kTRUE));
 
    RooArgSet* params = total.getParameters(data);
-   params->writeToFile("params_sPlot.txt");
+   params->writeToFile("params_LcXic.txt");
 
    // **** plot the distributions ****
    // #### Lc ####

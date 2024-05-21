@@ -26,11 +26,11 @@ using namespace RooStats;
 
 void fitLcXic0()
 {
-   gROOT->ProcessLine(".x /home/Koishi/LcXic/datafiles/lhcbStyle.C");
+   gROOT->ProcessLine(".x /home/Koishi//kc2023/LcXic0/datafiles/lhcbStyle.C");
 
    TCut MCut = "Lc_M>2210 && Lc_M<2360 && Xic_M>2420 && Xic_M<2540";
    TChain *chain = new TChain("DecayTree");
-   chain->AddFile("/home/Koishi/LcXic0/datafiles/XiccTuple_sw_corrected.root");
+   chain->AddFile("/home/Koishi/kc2023/LcXic0/datafiles/XiccTuple_sw_corrected.root");
 
    RooRealVar *m = new RooRealVar("C_M_corrected","M(#Lambda_{c}^{+}#bar{#Xi_{c}^{#minus}})",4757,6757,"MeV/c^{2}");
    RooRealVar *nsig_sw = new RooRealVar("nsig_sw","signal weight",-2.0,2.0);
@@ -163,7 +163,7 @@ void fitLcXic0()
    legend->AddEntry("state 1",Form("state 1:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean1->getVal(),mean1->getError(),sigma1->getVal(),sigma1->getError(),Nsig1->getVal(),Nsig1->getError()),"l");
    legend->AddEntry("state 2",Form("state 2:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean2->getVal(),mean2->getError(),sigma2->getVal(),sigma2->getError(),Nsig2->getVal(),Nsig2->getError()),"l");
    legend->AddEntry("state 3",Form("state 3:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean3->getVal(),mean3->getError(),sigma3->getVal(),sigma3->getError(),Nsig3->getVal(),Nsig3->getError()),"l");
-   legend->AddEntry("B^{+}",Form("state 4:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean4->getVal(),mean4->getError(),sigma4->getVal(),sigma4->getError(),Nsig4->getVal(),Nsig4->getError()),"l");
+   legend->AddEntry("B^{+}",Form("B^{+}:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean4->getVal(),mean4->getError(),sigma4->getVal(),sigma4->getError(),Nsig4->getVal(),Nsig4->getError()),"l");
    legend->AddEntry("background","background","l");
    legend->AddEntry("combined background","combined background","l");
    legend->Draw();

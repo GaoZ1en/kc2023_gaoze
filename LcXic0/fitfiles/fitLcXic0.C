@@ -26,11 +26,11 @@ using namespace RooStats;
 
 void fitLcXic0()
 {
-   gROOT->ProcessLine(".x /home/Koishi/LcXic/datafiles/lhcbStyle.C");
+   gROOT->ProcessLine(".x /home/Koishi/kc2023/LcXic0/datafiles/lhcbStyle.C");
 
    TCut MCut = "Lc_M>2210 && Lc_M<2360 && Xic_M>2420 && Xic_M<2540";
    TChain *chain = new TChain("DecayTree");
-   chain->AddFile("/home/Koishi/LcXic0/datafiles/XiccTuple_sw_corrected.root");
+   chain->AddFile("/home/Koishi/kc2023/LcXic0/datafiles/XiccTuple_sw_corrected.root");
 
    RooRealVar *m = new RooRealVar("C_M_corrected","M(#Lambda_{c}^{+}#Xi_{c}^{0})",4757,6757,"MeV/c^{2}");
    RooRealVar *nsig_sw = new RooRealVar("nsig_sw","signal weight",-2.0,2.0);

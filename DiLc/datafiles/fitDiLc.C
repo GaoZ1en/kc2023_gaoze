@@ -12,9 +12,9 @@
 #include <RooAddPdf.h>
 #include <RooWorkspace.h>
 #include <RooAbsData.h>
-#include "RooStats/ModelConfig.h"
-#include "RooStats/ProfileLikelihoodCalculator.h"
-#include "RooStats/HypoTestResult.h"
+//#include "RooStats/ModelConfig.h"
+//#include "RooStats/ProfileLikelihoodCalculator.h"
+//#include "RooStats/HypoTestResult.h"
 #include "RooStats/SPlot.h"
 #include "MyCB.h"
 #include "MyCB.cxx"
@@ -28,12 +28,12 @@ using namespace RooStats;
 
 void fitDiLc()
 {
-   gROOT->ProcessLine(".x /afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/lhcbStyle.C");
+   gROOT->ProcessLine(".x /home/Koishi/kc2023/DiLc/datafiles/lhcbStyle.C");
 
    TCut LcCut("Lc_TMVA_BDT>-0.27 && LcBar_TMVA_BDT>-0.27 && Lc_M>2220 && LcBar_M>2220 && Lc_M<2360 && Lc_M<2360");
 
    TChain* chain = new TChain();
-   chain->Add("/afs/ihep.ac.cn/users/g/gaoze/private/workfs/DiLc/datafiles/XiccTuple.root/DecayTree");
+   chain->Add("/home/Koishi/kc2023/DiLc/datafiles/XiccTuple.root/DecayTree");
    TTree* newtree = chain->CopyTree(LcCut);
 
    RooArgSet vars("Variables");
@@ -93,7 +93,7 @@ void fitDiLc()
    total.fitTo(data, Minos(kTRUE), Extended(kTRUE));
 
    RooArgSet* params = total.getParameters(data);
-   //params->writeToFile("params_DiLc.txt");
+   params->writeToFile("params_DiLc.txt");
 
    // **** plot the distributions ****
    // #### Lc ####

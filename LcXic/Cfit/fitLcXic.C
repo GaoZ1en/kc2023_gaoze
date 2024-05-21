@@ -26,11 +26,11 @@ using namespace RooStats;
 
 void fitLcXic()
 {
-   gROOT->ProcessLine(".x /home/Koishi/LcXic/datafiles/lhcbStyle.C");
+   gROOT->ProcessLine(".x /home/Koishi/kc2023/LcXic/datafiles/lhcbStyle.C");
 
    TCut MCut = "Lc_M>2210 && Lc_M<2360 && Xic_M>2420 && Xic_M<2540";
    TChain *tree = new TChain("DecayTree");
-   tree->AddFile("/home/Koishi/LcXic/datafiles/XiccTuple_sw_corrected.root");
+   tree->AddFile("/home/Koishi/kc2023/LcXic/datafiles/XiccTuple_sw_corrected.root");
    TTree *chain = tree->CopyTree(MCut);
 
    RooRealVar *m = new RooRealVar("C_M_corrected","M(#Lambda_{c}^{+}#bar{#Xi_{c}^{#minus}})",4755,6755,"MeV/c^{2}");
@@ -242,7 +242,7 @@ void fitLcXic()
    legend->AddEntry("state 5",Form("state 5:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean5->getVal(),mean5->getError(),sigma5->getVal(),sigma5->getError(),Nsig5->getVal(),Nsig5->getError()),"l");
    legend->AddEntry("state 6",Form("state 6:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean6->getVal(),mean6->getError(),sigma6->getVal(),sigma6->getError(),Nsig6->getVal(),Nsig6->getError()),"l");
    //legend->AddEntry("state 7",Form("state 7:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean9->getVal(),mean9->getError(),sigma9->getVal(),sigma9->getError(),Nsig9->getVal(),Nsig9->getError()),"l");
-   legend->AddEntry("state 9",Form("state 8:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean10->getVal(),mean10->getError(),sigma10->getVal(),sigma10->getError(),Nsig10->getVal(),Nsig10->getError()),"l");
+   legend->AddEntry("state 9",Form("state 7:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean10->getVal(),mean10->getError(),sigma10->getVal(),sigma10->getError(),Nsig10->getVal(),Nsig10->getError()),"l");
    legend->AddEntry("B_{s}^{0}",Form("B_{s}^{0}:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean8->getVal(),mean8->getError(),sigma8->getVal(),sigma8->getError(),Nsig8->getVal(),Nsig8->getError()),"l");
    legend->AddEntry("B^{0}",Form("B^{0}:mean=%.2f#pm%.2f, sigma=%.2f#pm%.2f, N=%.2f#pm%.2f",mean7->getVal(),mean7->getError(),sigma7->getVal(),sigma7->getError(),Nsig7->getVal(),Nsig7->getError()),"l");
    legend->AddEntry("background","background","l");
